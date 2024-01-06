@@ -34,6 +34,7 @@ function newGame() {
     for (let i = 0; i < 200; i++) {
         document.getElementById('words').innerHTML += formatWord(randomWord());
     }
+
     addClass(document.querySelector('.word'), 'current');
     addClass(document.querySelector('.letter'), 'current');
 
@@ -204,6 +205,7 @@ document.getElementById('game').addEventListener('keyup', ev =>{
 document.getElementById('newGameBtn').addEventListener('click', () => {
     gameOver();
     document.getElementById('game').className = '';
+    document.getElementById('words').style.marginTop = '0px';
     newGame();
   });
 
