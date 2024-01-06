@@ -1,4 +1,4 @@
-const words = 'tumble cute school marsh convert joke replacement premature dough cluster rack equation bulletin path commitment list federation acquisition food flower marriage pitch lover note technique'.split(' ');
+const words = 'tumble cute school marsh convert joke replacement dough cluster rack equation bulletin path commitment list food flower marriage pitch lover note technique leaf fish glow bell crab frog spin drum luck tap'.split(' ');
 const wordsCount = words.length;
 const gameTime = 30 * 1000;
 window.timer = null;
@@ -24,6 +24,10 @@ function formatWord(word) {
 }
 
 function newGame() {
+    const gameTime = 30 * 1000;
+    window.timer = null;
+    window.gameStart = null;
+    window.pauseTime = 0;
     wordContainer.style.display = 'block';
     resultContainer.style.display = 'none';
     document.getElementById('words').innerHTML = '';
@@ -199,8 +203,7 @@ document.getElementById('game').addEventListener('keyup', ev =>{
 
 document.getElementById('newGameBtn').addEventListener('click', () => {
     gameOver();
-    document.getElementById('game').classList.remove('over');
-    document.getElementById('result').innerHTML = ` `;
+    document.getElementById('game').className = '';
     newGame();
   });
 
